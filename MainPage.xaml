@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MawiCompass.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Compass"
+    BackgroundColor="#0F1115">
+
+    <Grid Padding="24" RowDefinitions="*,Auto,Auto,Auto">
+
+        <!--  Compass  -->
+        <GraphicsView
+            x:Name="CompassView"
+            Drawable="{Binding CompassDrawable}"
+            HeightRequest="280"
+            VerticalOptions="Center" />
+
+        <!--  Heading  -->
+        <Label
+            Grid.Row="1"
+            Margin="0,20,0,8"
+            FontSize="32"
+            HorizontalTextAlignment="Center"
+            Text="{Binding HeadingText}"
+            TextColor="#E5E7EB" />
+
+        <!--  Controls: True North + Declination  -->
+        <Grid
+            Grid.Row="2"
+            Padding="0,4"
+            ColumnDefinitions="Auto,*,Auto,90,Auto"
+            ColumnSpacing="12">
+            <Label
+                Text="True North"
+                TextColor="#E5E7EB"
+                VerticalTextAlignment="Center" />
+            <Switch
+                x:Name="TrueSwitch"
+                Toggled="OnTrueToggled"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Column="2"
+                Text="Declination"
+                TextColor="#E5E7EB"
+                VerticalTextAlignment="Center" />
+            <Entry
+                x:Name="DeclinationEntry"
+                Grid.Column="3"
+                BackgroundColor="#1A1D24"
+                HorizontalTextAlignment="Center"
+                Keyboard="Numeric"
+                MaxLength="6"
+                Placeholder="e.g. 6.5 or -4"
+                TextChanged="OnDeclinationChanged"
+                TextColor="#E5E7EB" />
+            <Label
+                Grid.Column="4"
+                Text="°"
+                TextColor="#E5E7EB"
+                VerticalTextAlignment="Center" />
+        </Grid>
+
+        <!--  Status  -->
+        <Label
+            Grid.Row="3"
+            HorizontalTextAlignment="Center"
+            Opacity="0.75"
+            Text="{Binding StatusText}"
+            TextColor="#9CA3AF" />
+    </Grid>
+</ContentPage>
