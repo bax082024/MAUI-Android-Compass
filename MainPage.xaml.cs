@@ -142,7 +142,6 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
         _useTrueNorth = e.Value;
         Preferences.Set(PrefUseTrue, _useTrueNorth);
-        // refresh immediately
         CompassDrawable.HeadingDeg = (float)OutputHeadingDeg();
         OnPropertyChanged(nameof(HeadingText));
         CompassView.Invalidate();
@@ -153,7 +152,6 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
         if (double.TryParse(e.NewTextValue?.Replace(',', '.'), System.Globalization.NumberStyles.Float,
             System.Globalization.CultureInfo.InvariantCulture, out var val))
         {
-            // clamp to reasonable range
             _declinationDeg = Math.Clamp(val, -30.0, 30.0);
             Preferences.Set(PrefDeclDeg, _declinationDeg);
             CompassDrawable.HeadingDeg = (float)OutputHeadingDeg();
@@ -185,7 +183,6 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
 
     private static double AngularDelta(double a, double b)
     {
-        // shortest signed difference [-180, 180)
         var d = (a - b + 540.0) % 360.0 - 180.0;
         return d;
     }

@@ -4,16 +4,16 @@ namespace MawiCompass;
 
 public sealed class CompassDrawable : IDrawable
 {
-    public float HeadingDeg { get; set; } // 0..360 (magnetic)
+    public float HeadingDeg { get; set; }
 
     // Palette (tweak freely)
-    readonly Color RingColor = Color.FromArgb("#D1D5DB"); // gray-300
-    readonly Color MajorTick = Color.FromArgb("#F3F4F6"); // near-white
-    readonly Color MidTick = Color.FromArgb("#D1D5DB"); // gray-300
-    readonly Color MinorTick = Color.FromArgb("#9CA3AF"); // gray-400
-    readonly Color LabelColor = Color.FromArgb("#F3F4F6"); // near-white
-    readonly Color NorthColor = Color.FromArgb("#EF4444"); // red-500
-    readonly Color SouthColor = Color.FromArgb("#9CA3AF"); // gray-400
+    readonly Color RingColor = Color.FromArgb("#D1D5DB");
+    readonly Color MajorTick = Color.FromArgb("#F3F4F6");
+    readonly Color MidTick = Color.FromArgb("#D1D5DB");
+    readonly Color MinorTick = Color.FromArgb("#9CA3AF");
+    readonly Color LabelColor = Color.FromArgb("#F3F4F6");
+    readonly Color NorthColor = Color.FromArgb("#EF4444");
+    readonly Color SouthColor = Color.FromArgb("#9CA3AF");
     readonly Color HubColor = Color.FromArgb("#E5E7EB");
     readonly Color OutlineShadow = Colors.Black.WithAlpha(0.35f);
 
@@ -87,9 +87,9 @@ public sealed class CompassDrawable : IDrawable
         canvas.FillColor = HubColor;
         canvas.FillCircle(0, 0, 5);
 
-        canvas.RestoreState(); // stop rotating for labels
+        canvas.RestoreState();
 
-        // ---- cardinal letters (don’t rotate) ----
+        // ---- cardinal letters ----
         canvas.FontColor = LabelColor;
         canvas.FontSize = 18;
         canvas.DrawString("N", cx, cy - r - 22, HorizontalAlignment.Center);
