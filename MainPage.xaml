@@ -6,6 +6,15 @@
     Title="Compass"
     BackgroundColor="#0F1115">
 
+    <!--  Top-right info icon  -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Clicked="OnDeclinationInfo"
+            IconImageSource="info.png"
+            Order="Primary"
+            Priority="0" />
+    </ContentPage.ToolbarItems>
+
     <Grid Padding="24" RowDefinitions="*,Auto,Auto,Auto">
 
         <!--  Compass  -->
@@ -32,22 +41,26 @@
             Padding="0,4"
             ColumnDefinitions="Auto,Auto,*,Auto,100,Auto"
             ColumnSpacing="12">
+
             <Label
                 Grid.Column="0"
                 Text="True North"
                 TextColor="#E5E7EB"
                 VerticalTextAlignment="Center" />
+
             <Switch
                 x:Name="TrueSwitch"
                 Grid.Column="1"
-                Margin="2,0,0,0"
+                Margin="8,0,0,0"
                 Toggled="OnTrueToggled"
                 VerticalOptions="Center" />
+
             <Label
                 Grid.Column="3"
                 Text="Declination"
                 TextColor="#E5E7EB"
                 VerticalTextAlignment="Center" />
+
             <Entry
                 x:Name="DeclinationEntry"
                 Grid.Column="4"
@@ -58,13 +71,13 @@
                 Placeholder="e.g. 6.5 or -4"
                 TextChanged="OnDeclinationChanged"
                 TextColor="#E5E7EB" />
+
             <Label
                 Grid.Column="5"
                 Text="°"
                 TextColor="#E5E7EB"
                 VerticalTextAlignment="Center" />
         </Grid>
-
 
         <!--  Status  -->
         <Label

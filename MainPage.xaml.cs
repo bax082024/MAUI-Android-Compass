@@ -148,6 +148,11 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
         return deg;
     }
 
+    private async void OnDeclinationInfo(object? sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(DeclinationInfoPage));
+    }
+
     protected void OnPropertyChanged([CallerMemberName] string? name = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 }
