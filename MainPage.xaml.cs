@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using Microsoft.Maui.Devices.Sensors;
 using Microsoft.Maui.Storage;
+using Microsoft.Maui.Devices;
 
 namespace MawiCompass;
 
@@ -20,6 +21,9 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
     private bool _interference;
     private readonly double _minEarth = 25.0; // µT
     private readonly double _maxEarth = 65.0; // µT
+
+    private int _lastSnapIndex = -1;
+    private const double SnapThreshold = 2.0;
 
     public CompassDrawable CompassDrawable { get; } = new();
 
@@ -86,11 +90,37 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
         var raw = e.Reading.HeadingMagneticNorth; // 0..360
         _magneticHeading = _filter.Step(raw);
 
-        CompassDrawable.HeadingDeg = (float)OutputHeadingDeg();
+        var outDeg = OutputHeadingDeg();
+
+        // --- Haptics when aligning to N/E/S/W ---
+        var nearestIndex = (int)Math.Round(outDeg / 90.0) % 4; // 0=N,1=E,2=S,3=W
+        var nearestAngle = nearestIndex * 90.0;
+        var diff = Math.Abs(AngularDelta(outDeg, nearestAngle));
+
+        if (diff <= SnapThreshold && nearestIndex != _lastSnapIndex)
+        {
+            try
+            {
+                HapticFeedback.Default.Perform(HapticFeedbackType.Click);
+                // (Optional stronger pulse)
+                // Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(25));
+            }
+            catch { /* ignore if device lacks haptics */ }
+
+            _lastSnapIndex = nearestIndex;
+        }
+        else if (diff > SnapThreshold + 1) // small hysteresis to avoid chatter
+        {
+            _lastSnapIndex = -1;
+        }
+        // --- end haptics ---
+
+        CompassDrawable.HeadingDeg = (float)outDeg;
 
         OnPropertyChanged(nameof(HeadingText));
         CompassView.Invalidate();
     }
+
 
     private void OnMagChanged(object? sender, MagnetometerChangedEventArgs e)
     {
@@ -151,6 +181,13 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
     private async void OnDeclinationInfo(object? sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(DeclinationInfoPage));
+    }
+
+    private static double AngularDelta(double a, double b)
+    {
+        // shortest signed difference [-180, 180)
+        var d = (a - b + 540.0) % 360.0 - 180.0;
+        return d;
     }
 
     protected void OnPropertyChanged([CallerMemberName] string? name = null)
