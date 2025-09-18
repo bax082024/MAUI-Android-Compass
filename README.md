@@ -63,8 +63,6 @@ Why GPS-free? It still points north even if GPS is jammed, spoofed, or offline.
 
 - A real device for testing (emulators usually have no magnetometer)
 
-- Or download the ready to Android APK : 
-
 ---
 
 ## Run (Debug)
@@ -89,6 +87,24 @@ On emulators, the heading will stay at 0° because there’s no magnetometer.
 	- 'adb install -r path\to\MawiCompass-Signed.apk'
 
 ---
+
+## Download
+
+- **Android APK (signed):** [Download MawiCompass](APK/com.bax.mawicompass.apk)
+
+> If your browser opens a preview page on GitHub, use the **Download raw file** button.  
+> After downloading, you may need to allow installs from unknown sources.
+
+### Sideload instructions
+1. Copy the APK to your phone (or open this page on the phone and download it).
+2. Tap the APK → allow **Install unknown apps** for your browser/files app when prompted.
+3. Install and open **MawiCompass**.
+
+**Notes**
+- The APK is signed with a key dedicated to this app. Future updates will use the **same** key so you can update in-place.
+- If you ever see “App not installed,” uninstall any older build signed with a different key first.
+- Architecture: built for **arm64-v8a** (most modern devices). If you need x86 or armeabi-v7a, rebuild with those ABIs.
+
 
 ## True North / Declination
 
@@ -131,7 +147,7 @@ Disclaimer: Not for aviation or other safety-critical navigation.
 
 MIT License
 
-Copyright (c) 2025 <bax>
+Copyright (c) 2025 <bax082024>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
