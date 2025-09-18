@@ -106,5 +106,14 @@ On emulators, the heading will stay at 0° because there’s no magnetometer.
 
 --- 
 
+## Permissions
+
+- Android: none required for magnetic heading.
+(We don’t request location; True North uses manual declination.)
+
+- Note: Some OEMs can throttle sensors in background; the app is intended for foreground use.
+
+--- 
+
 
 
