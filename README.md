@@ -90,7 +90,9 @@ On emulators, the heading will stay at 0° because there’s no magnetometer.
 
 ## Download
 
-- **Android APK (signed):** [Download MawiCompass](APK/com.bax.mawicompass.apk)
+[![Download APK](https://img.shields.io/badge/Download-APK-2ea44f?style=for-the-badge)](APK/com.bax.mawicompass.apk?raw=1)
+
+> If your browser shows a preview page, click **Download raw file**.
 
 > If your browser opens a preview page on GitHub, use the **Download raw file** button.  
 > After downloading, you may need to allow installs from unknown sources.
