@@ -1,7 +1,9 @@
 ﻿# MawiCompass 🧭
 
 A tiny, privacy-friendly GPS-free compass built with .NET MAUI.
-Works anywhere—no internet, no accounts, no ads, no tracking.
+Works anywhere 
+
+— **no internet, no accounts, no ads, no tracking**.
 
 - Uses the phone’s magnetometer + tilt compensation to show Magnetic North
 
