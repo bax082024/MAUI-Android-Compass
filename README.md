@@ -17,3 +17,24 @@ Why GPS-free? It still points north even if GPS is jammed, spoofed, or offline.
 
 --- 
 
+## Features
+
+- 🧭 Magnetic heading (tilt-compensated) — no GPS required
+
+- 🎯 True North toggle with declination input & persistent settings
+
+- 💥 Haptic feedback near 0°/90°/180°/270°
+
+- ⚠️ Interference detection (typical Earth field 25–65 µT)
+
+- 🌙 Dark theme, clear dial, minor ticks every 10°
+
+- ℹ️ Declination info page with links to trusted resources
+
+- 🛡️ No network calls, ads, analytics, or permissions (Android)
+
+---  
+
+## Screenshot
+
+<img src="Resources/Images/app.png" alt="1" width="220">
