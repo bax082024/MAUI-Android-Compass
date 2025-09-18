@@ -171,6 +171,10 @@ SOFTWARE.
 
 ---
 
+## Contact
 
+For questions or feedback, please contact :
+
+- bax082024@gmail.com
 
 
