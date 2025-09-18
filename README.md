@@ -76,3 +76,15 @@ Why GPS-free? It still points north even if GPS is jammed, spoofed, or offline.
 On emulators, the heading will stay at 0° because there’s no magnetometer.
 
 ---
+
+## Build Release APK (sideload)
+
+1. Set Configuration to Release.
+
+2. Build → Archive → Distribute → Ad Hoc → APK.
+
+3. Sign with your keystore and install on device:
+	- 'adb install -r path\to\MawiCompass-Signed.apk'
+
+
+---
