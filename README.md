@@ -86,5 +86,23 @@ On emulators, the heading will stay at 0° because there’s no magnetometer.
 3. Sign with your keystore and install on device:
 	- 'adb install -r path\to\MawiCompass-Signed.apk'
 
-
 ---
+
+## True North / Declination
+
+- Toggle True North on/off in the UI.
+
+- Enter declination in degrees:
+
+	- East = positive (e.g., +2.5)
+
+	- West = negative (e.g., -4)
+
+- Values are saved using Preferences.
+
+- Declination changes slowly. Set it once for your region or open the Info page to find it.
+
+--- 
+
+
+
