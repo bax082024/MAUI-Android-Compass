@@ -107,12 +107,6 @@ On emulators, the heading will stay at 0° because there’s no magnetometer.
 - If you ever see “App not installed,” uninstall any older build signed with a different key first.
 - Architecture: built for **arm64-v8a** (most modern devices). If you need x86 or armeabi-v7a, rebuild with those ABIs.
 
-### Scan to download on your phone
-
-<img
-  alt="QR code to download APK"
-  width="180"
-  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fraw.githubusercontent.com%2F<YOUR_USER>%2F<YOUR_REPO>%2Fmain%2FAPK%2Fcom.bax.mawicompass.apk" />
 
 
 
