@@ -115,5 +115,13 @@ On emulators, the heading will stay at 0° because there’s no magnetometer.
 
 --- 
 
+Calibration & accuracy
 
+- If readings drift, move the phone in a figure-8 to calibrate.
+
+- Avoid nearby magnets/metal (car mounts, laptops, speakers).
+
+- The app shows Interference if the measured field is atypical.
+
+Disclaimer: Not for aviation or other safety-critical navigation.
 
