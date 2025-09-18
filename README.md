@@ -60,3 +60,19 @@ Why GPS-free? It still points north even if GPS is jammed, spoofed, or offline.
 - Android SDK / Emulator (for development)
 
 - A real device for testing (emulators usually have no magnetometer)
+
+- Or download the ready to Android APK : 
+
+---
+
+## Run (Debug)
+
+1. Open the solution in VS.
+
+2. Select Android and your physical device in the target dropdown.
+
+3. Press ▶ Run.
+
+On emulators, the heading will stay at 0° because there’s no magnetometer.
+
+---
