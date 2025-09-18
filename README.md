@@ -38,3 +38,15 @@ Why GPS-free? It still points north even if GPS is jammed, spoofed, or offline.
 ## Screenshot
 
 <img src="Resources/Images/app.png" alt="1" width="220">
+
+---
+
+## Tech Stack
+
+- .NET 8 + .NET MAUI
+
+- MAUI Essentials: Compass, Magnetometer, HapticFeedback
+
+- Simple sensor fusion & smoothing via a Low-pass filter
+
+---
