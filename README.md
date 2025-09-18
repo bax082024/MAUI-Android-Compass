@@ -50,3 +50,13 @@ Why GPS-free? It still points north even if GPS is jammed, spoofed, or offline.
 - Simple sensor fusion & smoothing via a Low-pass filter
 
 ---
+
+## Getting Started
+
+**Prerequisites:**
+
+- Visual Studio 2022 with the .NET MAUI workload
+
+- Android SDK / Emulator (for development)
+
+- A real device for testing (emulators usually have no magnetometer)
